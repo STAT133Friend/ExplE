@@ -1,0 +1,142 @@
+---
+title: "Exploration E - Practice"
+format: pdf
+editor: visual
+---
+
+```{r}
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 70), tidy = TRUE)
+```
+
+## Your turn!
+
+Try out the following problems, and then follow the instructions at the end to render and submit the document. **Note that all plots in this practice should be created using ggplot2**.
+
+As you are working through these problems, make lots of use of resources! Some resources to consider using include:
+
+-   the notes,
+
+-   *the ggplot2 cheat sheets (on Canvas under Resources module),*
+
+-   the `help()` documents,
+
+-   if you get really stuck, the internet.
+
+Additionally, as a reminder, **here are some important tips when making complex plots**:
+
+-   Start with the most basic features/settings for a plot and check that your code is doing what you want before adding more features.
+
+-   After you've check that the basic plot works, add features one at a time, checking along the way that the new features are displaying how you want them to.
+
+-   You can also use `#` to comment out some of your code temporarily to help isolate where issues might be arising.
+
+1\. Download the data set `F1Data.csv` from **Canvas** if you have not already. This data set is adapted from a data set on *kaggle.com*, and if you would like to know more about the data, please visit this link: [Formula 1 Drivers Dataset](https://www.kaggle.com/datasets/dubradave/formula-1-drivers-dataset/data). This data set contains information about every driver in the the motorsport Formula 1 (F1), through the first race of the 2023 season.
+
+Load the data into R studio. If you can't remember how to do this, go back and review the steps in Exploration C. **Make sure you include the two lines of code necessary for your document to render (see Exploration C).**
+
+You might want to look over the data so that you are familiar with what it looks like before you attempt the next steps below. To do this, after you have loaded in the data set, you can click on the `F1Data` data frame in the **Environment** panel (upper right panel). *Do not display the full data frame here.*
+
+```{r}
+
+```
+
+2\. Import the `ggplot2`, `marimekko`, and `ggpubr` libraries. **If you do not do this, your document will not render.**
+
+```{r}
+
+```
+
+3\. Create a mosaic plot comparing whether a driver is currently driving (`Active`) to whether they have every been a world champion driver (`Champion`). Your plot should include the following features:
+
+-   The x-axis should show whether they are a champion and the y-axis should show whether they are active.
+
+-   Different colors to distinguish whether the driver is active or not.
+
+-   An informative title and labels on the x- and y-axes, that you created (not the default ones).
+
+```{r}
+
+```
+
+4\. Create a new data frame that only contains World Champions (that is drivers for which `Champion` is `TRUE`).
+
+-   Call this new data frame `champsF1` (**make sure to spell it in exactly this way**).
+-   Display the first 10 rows of `champsF1`.
+
+We will use this smaller data frame in the remainder of the problems. Here are some hints:
+
+-   Consider using either `subset()` or other indexing techniques (from Explorations C or D). (**Note:** this problem does not involve new techniques from Exploration F).
+
+-   If done correctly, your `champsF1` data frame should have 34 rows.
+
+```{r}
+
+```
+
+5\. Create a boxplot using the `champsF1` data frame displaying the number of championships won (`Championships`), but grouped by which continent the driver is from (`Continent`). Your plot should include all of the following:
+
+-   Each boxplot should be a different color depending on the continent.
+
+-   Outliers should be excluded. (*Hint:* you may need to search the `help()` for `geom_boxplot` to see how to exclude outliers).
+
+-   An informative title and labels on the x- and y-axes, that you created (not the default ones).
+
+```{r}
+
+```
+
+6\. Create a grid of dot plots using the `champsF1` data frame displaying the number of race entries (`Race_Entries`) by whether they are active or not. That is, you should create a grid of dot plots where one dot plot shows the number of race entries for each active driver and one shows the number of race entries for each non-active driver. Your plot should have the following features:
+
+-   Only one column of plots, for a total of two dot plots (i.e. one plot should be on top of the other).
+
+-   y-axis numbers removed.
+
+-   An informative title and labels on the x-axis, that you created (not the default ones).
+
+*Hint:* you will want to use facet wrapping, and you should only have one input to the `aes()` function since a single dot plot only displays one variable.
+
+If done correctly, you should see only three active champion drivers.
+
+```{r}
+
+```
+
+7\. Create a histogram using the `champsF1` data frame displaying the points earned by the drivers in their careers (`Points`). Your plot should include all of the following:
+
+-   Two distinct vertical lines on the plot: one at the mean points earned and one at the median points earned. the vertical lines should be distinguished by color, type, or size.
+
+-   A legend indicating what each of the lines represent.
+
+-   An informative title and labels on the x- and y-axes, that you created (not the default ones).
+
+```{r}
+
+```
+
+8\. Create a scatter plot using the `champsF1` data frame comparing the total number of points the driver has received in their career (`Points`) to the total number of years they have been active (`Years_Active`). Note that each dot on this plot will represent a single driver (row) in your data frame. Your plot should have the following features:
+
+-   The `Years_Active` variable should be on the x-axis, and the `Points` variable should be on the y-axis.
+
+-   Each dot on the plot should be a different color based whether they are currently active (`Active`).
+
+-   Each dot on the plot should be a different shape based on whether they are currently active (`Active`).
+
+-   A legend that clearly indicates what each color/shape means. The color and shape of the dots in the legend should match the colors/shapes of the dots on the plot.
+
+-   An informative title and labels on the x- and y-axes, that you created (not the default ones).
+
+```{r}
+
+```
+
+**Rendering Instructions**
+
+a.  Make sure that your file does not have any errors in it, and that it is self-contained! If it contains errors or is not self-contained, the document will not render.
+
+b.  Towards the top left of the RStudio window, you will see a blue arrow and the word "**Render**". Click this. You will see a lot of text show up in the **Background Jobs** pane below. Wait until this text stops.
+
+c.  Once the rendering is complete, you will see a new pdf file in the **"Files"** pane in the lower right pane of RStudio.
+
+d.  Locate the document you want to download and click the check box next to the file name, then select the "**More**" option from the top of the "**Files**"pane (blue gear icon), and then select "**Export**" and then "**Download**".
+
+e.  The file should be downloaded to your downloads folder. You should now be able to go into **Canvas** and upload the pdf and submit it.
