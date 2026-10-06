@@ -32,7 +32,7 @@ Additionally, as a reminder, **here are some important tips when making complex 
 
 1\. Download the data set `F1Data.csv` from **Canvas** if you have not already. This data set is adapted from a data set on *kaggle.com*, and if you would like to know more about the data, please visit this link: [Formula 1 Drivers Dataset](https://www.kaggle.com/datasets/dubradave/formula-1-drivers-dataset/data). This data set contains information about every driver in the the motorsport Formula 1 (F1), through the first race of the 2023 season.
 
-Load the data into R studio. If you can't remember how to do this, go back and review the steps in Exploration C. **Make sure you include the two lines of code necessary for your document to render (see Exploration C).**
+Load the data into R studio. If you can't remember how to do this, go back and review the steps in Exploration C.
 
 You might want to look over the data so that you are familiar with what it looks like before you attempt the next steps below. To do this, after you have loaded in the data set, you can click on the `F1Data` data frame in the **Environment** panel (upper right panel). *Do not display the full data frame here.*
 
@@ -40,7 +40,7 @@ You might want to look over the data so that you are familiar with what it looks
 
 ```
 
-2\. Import the `ggplot2`, `marimekko`, and `ggpubr` libraries. **If you do not do this, your document will not render.**
+2\. Import the `ggplot2` and `marimekko` libraries. **If you do not do this, your document will not render.**
 
 ```{r}
 
